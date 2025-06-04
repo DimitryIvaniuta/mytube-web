@@ -3280,7 +3280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx/js@npm:21.1.2":
+"@nx/js@npm:21.1.2, @nx/js@npm:^21.1.2":
   version: 21.1.2
   resolution: "@nx/js@npm:21.1.2"
   dependencies:
@@ -4255,6 +4255,25 @@ __metadata:
   version: 5.80.2
   resolution: "@tanstack/query-core@npm:5.80.2"
   checksum: 10c0/9d3ea434b1c14546fcf1ae6da4594a160aa836d1c896cd33408c22015fc53de7a44b83da9cb8b2e659d999ec29ebd9e9b42f07fcac7e149b1e919cc62551040a
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-devtools@npm:5.80.0":
+  version: 5.80.0
+  resolution: "@tanstack/query-devtools@npm:5.80.0"
+  checksum: 10c0/2210bd390a769f1cfaf0343e66c7ec9c0a8fca982fa7853428c3c7f7da438c3380b841e8e065603f4e8449d52237a80d4877fc5299995e76e18bd44d5143acfc
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-devtools@npm:^5.80.5":
+  version: 5.80.5
+  resolution: "@tanstack/react-query-devtools@npm:5.80.5"
+  dependencies:
+    "@tanstack/query-devtools": "npm:5.80.0"
+  peerDependencies:
+    "@tanstack/react-query": ^5.80.5
+    react: ^18 || ^19
+  checksum: 10c0/66e6a7465b8feb4d7c6878358f6ad19635eb92f60d8db0b4cdcc798d48af3251502b0da0002555518d6e18926a72bb556a782287a46bb14aeb6bb6f0a5cc7cae
   languageName: node
   linkType: hard
 
@@ -14147,13 +14166,14 @@ __metadata:
     "@nx/eslint": "npm:21.1.2"
     "@nx/eslint-plugin": "npm:21.1.2"
     "@nx/jest": "npm:21.1.2"
-    "@nx/js": "npm:21.1.2"
+    "@nx/js": "npm:^21.1.2"
     "@nx/next": "npm:^21.1.2"
     "@swc-node/register": "npm:~1.9.1"
     "@swc/cli": "npm:~0.6.0"
     "@swc/core": "npm:~1.5.7"
     "@swc/helpers": "npm:~0.5.11"
     "@tanstack/react-query": "npm:^5.80.3"
+    "@tanstack/react-query-devtools": "npm:^5.80.5"
     "@testing-library/dom": "npm:10.4.0"
     "@testing-library/react": "npm:16.1.0"
     "@types/jest": "npm:^29.5.12"
@@ -14173,6 +14193,8 @@ __metadata:
     eslint-plugin-react-hooks: "npm:5.0.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
+    jest-environment-node: "npm:^29.7.0"
+    jsonc-eslint-parser: "npm:^2.1.0"
     jsonc-parser: "npm:^3.3.1"
     next: "npm:~15.2.4"
     nx: "npm:^21.1.2"

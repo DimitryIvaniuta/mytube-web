@@ -26,13 +26,14 @@ function linkify(chunk) {
         (_, file, line, col) => {
             // ignore if already a URI we produced earlier
             if (_ .startsWith("file:///")) return _;
-            const abs = path.isAbsolute(file)
+            const isRelative = file.startsWith("..");
+            const abs = path.isAbsolute(file) || isRelative
                 ? file
-                : path.resolve(root, "web", file);
+                : path.resolve(root, "apps/web", file);
 
             // IntelliJ & VS Code expect:  file:///C://path/to/file.tsx:line:col
             const uriReplacement = abs.replace(/\\/g, "/");
-            const uri = "file:///" + uriReplacement;
+            const uri = (isRelative ? 'file:///' : '') + uriReplacement;
             return `${uri}:${line}:${col}`;
         }
     );
