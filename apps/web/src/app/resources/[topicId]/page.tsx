@@ -2,7 +2,7 @@
 'use client';
 
 import React, { Suspense } from 'react';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 // We’ll read the `topicId` from the pathname (or use useSearchParams if you prefer).
