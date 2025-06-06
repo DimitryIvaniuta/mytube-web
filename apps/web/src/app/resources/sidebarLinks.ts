@@ -1,5 +1,7 @@
 // apps/web/src/app/resources/sidebarLinks.ts
 
+import PresentationCard from "@/app/resources/content/PresentationCard";
+
 /**
  * A single link item in the sidebar.
  * - `label`: The text displayed in the sidebar.
@@ -72,4 +74,6 @@ export const topicList = [
     { label: 'Details', href: '/resources/Details' },
     { label: 'ViewContent', href: '/resources/ViewContent' },
     { label: 'DoubleArrayComponent', href: '/resources/DoubleArrayComponent' },
+    { label: 'PresentationCardWrapper', href: '/resources/PresentationCardWrapper' },
+    { label: 'DoubleArrayComponentImplWrapper', href: '/resources/DoubleArrayComponentImplWrapper' },
 ];
