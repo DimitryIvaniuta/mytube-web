@@ -1,0 +1,20 @@
+/* 1. Fill the viewport: */
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+}
+
+/* 2. Root layout is a column flex container: */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;       /* fill 100% of html/body */
+}
+
+/* 3. Content area sits between header (if any) and footer: */
+.app-content {
+  flex: 1 1 auto;     /* grow/shrink as needed */
+  display: flex;
+  min-height: 0;       /* critical: allow children to shrink below their content */
+  overflow: hidden;    /* prevent a second scrollbar on body */
+}

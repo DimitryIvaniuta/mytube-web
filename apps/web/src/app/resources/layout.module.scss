@@ -4,6 +4,7 @@ $sidebar-text: #f3f4f6;         /* light gray */
 $sidebar-text-active: #87c1ff;         /* light gray */
 $sidebar-text-inactive: #676767;         /* light gray */
 $sidebar-hover-bg: #757574;     /* slightly lighter slate */
+$sidebar-category-text: #0e0e0e;     /* slightly lighter slate */
 $sidebar-active-bg: #4b5563;    /* accented background */
 $sidebar-divider: #4b5563;
 
@@ -18,7 +19,9 @@ $transition-speed: 0.2s;
 
 .container {
   display: flex;
-  height: 100vh;             /* full viewport height */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -30,14 +33,33 @@ $transition-speed: 0.2s;
   background-color: $sidebar-bg;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0;           /* top/bottom spacing */
+  padding: 0;
+  margin: 0;
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  min-height: 0;
+  height: 95vh;
+  overflow-x: hidden;
 }
 
+.sidebarHeader {
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.sidebarContent {
+  flex: 1 1 auto;     /* fill remaining height */
+  min-height: 0;      /* allow scrolling */
+  overflow-y: auto;   /* scroll here */
+  padding-top: 1rem;  /* space below header */
+  padding-bottom: 1rem;
+  overflow-x: hidden;
+}
 /* Optional Logo/Header area */
 .sidebarHeader {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 
   img {
     width: 40px;
@@ -82,6 +104,7 @@ $transition-speed: 0.2s;
   &:hover {
     background-color: $sidebar-hover-bg;
     color: $sidebar-text-active;
+    font-weight: 500;
   }
 }
 
@@ -97,8 +120,26 @@ $transition-speed: 0.2s;
 ───────────────────────────────────────────────────────────────────────────── */
 
 .content {
-  flex-grow: 1;
-  background-color: #f9fafb;  /* very light gray */
+  flex: 1 1 auto;              /* fill remaining space */
+  min-height: 0;        /* allow free scrolling */
   padding: 2rem;
+  background-color: #f9fafb;
   overflow-y: auto;
+}
+
+/* Each section */
+.navSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.sectionTitle {
+  color: $sidebar-category-text;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
