@@ -83,21 +83,34 @@ const DeepMergePresentation: React.FC<DeepMergePresentationProps> = ({
     // 3.3 Handler to run on button click
     const handleMerge = () => {
         setError("");
+        setMergedResult(null);
+        // 1) Parse target JSON
+        let tgt: unknown;
         try {
-            const tgt = JSON.parse(targetJson);
-            const src = JSON.parse(sourceJson);
-
-            // ensure both are objects
-            if (!isObject(tgt) || !isObject(src)) {
-                throw new Error("Both inputs must be JSON objects.");
-            }
-
-            const merged = deepMerge(tgt, src);
-            setMergedResult(merged);
-        } catch (e: any) {
-            setMergedResult(null);
-            setError(e.message);
+            tgt = JSON.parse(targetJson);
+        } catch {
+            setError("Target is not valid JSON.");
+            return;
         }
+
+        // 2) Parse source JSON
+        let src: unknown;
+        try {
+            src = JSON.parse(sourceJson);
+        } catch {
+            setError("Source is not valid JSON.");
+            return;
+        }
+
+        // 3) Validate they are plain objects
+        if (!isObject(tgt) || !isObject(src)) {
+            setError("Both inputs must be JSON objects.");
+            return;
+        }
+
+        // 4) Safe to deep-merge now
+        const merged = deepMerge(tgt, src);
+        setMergedResult(merged);
     };
 
     return (
