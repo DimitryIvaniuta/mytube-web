@@ -2,6 +2,7 @@
 
 import PresentationCard from "@/app/resources/content/PresentationCard";
 import DeepMergePresentation from "@/app/resources/content/DeepMergePresentation";
+import InputWithTooltip from "@/app/resources/content/InputWithTooltip";
 
 /**
  * A single link item in the sidebar.
@@ -79,4 +80,6 @@ export const topicList = [
     { label: 'DoubleArrayComponentImplWrapper', href: '/resources/DoubleArrayComponentImplWrapper' },
     { label: 'DeepMergePresentation', href: '/resources/DeepMergePresentation' },
     { label: 'ForwardRefButtonWrapper', href: '/resources/ForwardRefButtonWrapper' },
+    { label: 'InputWithTooltip', href: '/resources/InputWithTooltip' },
+    { label: 'LimitedInputWithWarning', href: '/resources/LimitedInputWithWarning' },
 ];
