@@ -78,4 +78,5 @@ export const topicList = [
     { label: 'PresentationCardWrapper', href: '/resources/PresentationCardWrapper' },
     { label: 'DoubleArrayComponentImplWrapper', href: '/resources/DoubleArrayComponentImplWrapper' },
     { label: 'DeepMergePresentation', href: '/resources/DeepMergePresentation' },
+    { label: 'ForwardRefButtonWrapper', href: '/resources/ForwardRefButtonWrapper' },
 ];
