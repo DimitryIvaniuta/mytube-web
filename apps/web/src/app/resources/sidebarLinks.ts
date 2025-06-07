@@ -1,6 +1,7 @@
 // apps/web/src/app/resources/sidebarLinks.ts
 
 import PresentationCard from "@/app/resources/content/PresentationCard";
+import DeepMergePresentation from "@/app/resources/content/DeepMergePresentation";
 
 /**
  * A single link item in the sidebar.
@@ -76,4 +77,5 @@ export const topicList = [
     { label: 'DoubleArrayComponent', href: '/resources/DoubleArrayComponent' },
     { label: 'PresentationCardWrapper', href: '/resources/PresentationCardWrapper' },
     { label: 'DoubleArrayComponentImplWrapper', href: '/resources/DoubleArrayComponentImplWrapper' },
+    { label: 'DeepMergePresentation', href: '/resources/DeepMergePresentation' },
 ];
